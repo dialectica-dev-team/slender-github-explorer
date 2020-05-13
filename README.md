@@ -22,8 +22,8 @@ The repo identifier will be input by the user, e.g. "facebook/react" and,
 _for the purpose of the assignmnet_,
 you will have to present categories of data such as
 Issues, Pull Requests, Forks, Languages, Likes
-through a UI inspired by:
-[Dialectica's product designs](#).
+through a UI inspired by
+[Dialectica's product designs](https://res.cloudinary.com/sincospi/image/upload/v1589398706/dialectica/dialectica_design_elements.png).
 
 ![](https://res.cloudinary.com/sincospi/image/upload/c_scale,w_960/v1589276941/dialectica/assignment_filtered_table_1.png)
 _For guidance only - not necessary to implement pixel perfect_
@@ -113,6 +113,8 @@ Impement a button for like/unlike toggle functionality.
 Clearly indicate the total repo likes count and the state (liked or not) for the user.
 
 ### **[OPT]** Language Chart
+
+![](https://res.cloudinary.com/sincospi/image/upload/c_scale,w_140/v1589396749/dialectica/Screenshot_2020-05-13_at_22.03.13.png)
 
 Github provides language (i.e. Javascript, Ruby, etc.) stats
 in the form of number of files in each language.
