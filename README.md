@@ -1,3 +1,132 @@
+# Dialectica Front-end Assignment
+
+Front-end assigment for the position of Lead Front-End Engineer at
+[Dialectica](https://dialecticanet.com/).
+
+## Overview
+
+The assignment consists of several tasks.
+Some are required and others are marked as **[OPT]** to indicate they are optional (nice to have)s.
+Where tasks are presented in a hierarchy layout, if a parent is **[OPT]** then children are also.
+
+In general you should plan for 8-10 hours of your time,
+but you are free to spend more time if you wish.
+
+You will have 1 full week to complete the assignment.
+
+## Objective
+
+To build a modern web app that functions as a minimal github repo explorer.
+
+The repo identifier will be input by the user, e.g. "facebook/react" and,
+_for the purpose of the assignmnet_,
+you will have to present categories of data such as
+Issues, Pull Requests and Forks
+through a UI inspired by:
+[Dialectica's product designs](#).
+
+![](https://res.cloudinary.com/sincospi/image/upload/c_scale,w_960/v1589276941/dialectica/assignment_filtered_table_1.png)
+_For guidance only - not necessary to implement pixel perfect_
+
+## Preparation
+
+You will use React and will be utilizing github's [graphql endpoint](https://developer.github.com/v4/).
+
+This repo contains your starting point.
+
+It is a [create-react-app](https://create-react-app.dev/docs/getting-started),
+uses [yarn](https://alligator.io/nodejs/npm-yarn-cheatsheet/) package manager,
+is configured with
+[Prettier](https://prettier.io/docs/en/editors.html)
+and
+[Apollo Client 3](https://www.apollographql.com/docs/react/v3.0-beta/).
+
+Note: You are NOT confined to use Apollo (you may remove it) and are encouraged to use any additional libraries you wish.
+
+## Tasks
+
+### Obtain a github access token
+
+Simply follow Github's instructions
+for [creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+
+Note, you may wish to use a tool like
+[GraphiQL](https://www.electronjs.org/apps/graphiql)
+for building your queries initially.
+
+### Page layout
+
+The page should have 2 input fields.
+One for visitor's `Access Token` and the other for the desired repo identifier e.g. `facebook/react`.
+It is suggested that these values are also stored in localStorage for them to persist if the page is refreshed.
+
+Repo name and description should follow.
+
+### Tabs
+
+Categories of data presented will be arranged in a tab layout.
+Tabs should have counters that implement default filters
+e.g. Issues should show **open** issue count (see below for defaults).
+
+Each tab should have associated routing (see below).
+
+### Tab content
+
+A table with following properties:
+
+#### Issues
+
+- Router: `/issues`
+- Columns [number, title, author, commentCount, createdAt, state]
+- Filter by state: [Open, Closed, All], defaults to Open
+- Sort by: [commentCount, createdAt], default commendCount desc
+
+#### Pull Requests
+
+- Router: `/pull-requests`
+- Columns [title, author, commentCount, createdAt, state]
+- **[OPT]** Filter by state: [Open, Closed, Merged], defaults to Open
+- **[OPT]** Sort by: [commentCount, createdAt], default commentCount desc
+
+#### Forks
+
+- Router: `/forks`
+- Columns: [repoAndOnwerName, description, starCount, createdAt]
+- **[OPT]** Filter by Privacy: [Public, Private, All], defaults is Public
+- **[OPT]** Sort by: [starCount, createdAt], default starCount desc
+
+#### All Tab Tables
+
+Tables should implement
+
+- Pagination
+  - Up to 20 results in the first request
+  - **[OPT]** Load more button to bring next 20
+- **[OPT]** Togglable sorting asc/desc
+- **[OPT]** Filter dropdown. The total count for the filtered results, should be shown separately above the table.
+  - The top level counts should not be changed
+
+### Like/Unlike Toggle
+
+Impement a button for like/unlike toggle functionality.
+
+Clearly indicate the total likes count and the state (liked or not) for the user.
+
+### Language Chart
+
+Github provides language stats (e.g. Javascript, Ruby, etc.)
+in the form of number of files in each language.
+Hence, create a chart to depict the % occupied by each one of the top 3 languages.
+Any additional languages should be bundled under label "other".
+
+You may use some charting lib like [chartjs](https://www.chartjs.org/samples/latest/charts/pie.html).
+
+---
+
+# Not part of the Assignment
+
+Following is the default README for create-react-app:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
