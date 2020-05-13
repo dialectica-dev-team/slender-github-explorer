@@ -9,10 +9,10 @@ The assignment consists of several tasks.
 Some are required and others are marked as **[OPT]** to indicate they are optional (nice to have)s.
 Where tasks are presented in a hierarchy layout, if a parent is **[OPT]** then children are also.
 
-In general you should plan for 8-10 hours of your time,
+In general you should plan for **8-10 hours** of your time,
 but you are free to spend more time if you wish.
 
-You will have 1 full week to complete the assignment.
+You will have **1 week** to complete the assignment.
 
 ## Objective
 
@@ -21,7 +21,7 @@ To build a modern web app that functions as a minimal github repo explorer.
 The repo identifier will be input by the user, e.g. "facebook/react" and,
 _for the purpose of the assignmnet_,
 you will have to present categories of data such as
-Issues, Pull Requests and Forks
+Issues, Pull Requests, Forks, Languages, Likes
 through a UI inspired by:
 [Dialectica's product designs](#).
 
@@ -103,18 +103,18 @@ Tables should implement
   - Up to 20 results in the first request
   - **[OPT]** Load more button to bring next 20
 - **[OPT]** Togglable sorting asc/desc
-- **[OPT]** Filter dropdown. The total count for the filtered results, should be shown separately above the table.
-  - The top level counts should not be changed
+- **[OPT]** Filter dropdown. A results count, should be shown above the table.
+  - The top level (tab) counts should not be effected by these filters.
 
 ### Like/Unlike Toggle
 
 Impement a button for like/unlike toggle functionality.
 
-Clearly indicate the total likes count and the state (liked or not) for the user.
+Clearly indicate the total repo likes count and the state (liked or not) for the user.
 
-### Language Chart
+### **[OPT]** Language Chart
 
-Github provides language stats (e.g. Javascript, Ruby, etc.)
+Github provides language (i.e. Javascript, Ruby, etc.) stats
 in the form of number of files in each language.
 Hence, create a chart to depict the % occupied by each one of the top 3 languages.
 Any additional languages should be bundled under label "other".
@@ -123,7 +123,7 @@ You may use some charting lib like [chartjs](https://www.chartjs.org/samples/lat
 
 ---
 
-# Not part of the Assignment
+## All Below is NOT part of the assignment
 
 Following is the default README for create-react-app:
 
