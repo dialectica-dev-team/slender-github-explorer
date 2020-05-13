@@ -22,11 +22,12 @@ The repo identifier will be input by the user, e.g. "facebook/react" and,
 _for the purpose of the assignmnet_,
 you will have to present categories of data such as
 Issues, Pull Requests, Forks, Languages, Likes
-through a UI inspired by
-[Dialectica's product designs](https://res.cloudinary.com/sincospi/image/upload/v1589398706/dialectica/dialectica_design_elements.png).
+through a UI inspired by Dialectica's product designs.
+
+**Check out [THIS LINK](https://res.cloudinary.com/sincospi/image/upload/v1589398706/dialectica/dialectica_design_elements.png)** for designs.
 
 ![](https://res.cloudinary.com/sincospi/image/upload/c_scale,w_960/v1589276941/dialectica/assignment_filtered_table_1.png)
-_For guidance only - not necessary to implement pixel perfect_
+_Mockup for guidance (ignore languages tab)_
 
 ## Preparation
 
