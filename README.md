@@ -107,11 +107,11 @@ Tables should implement
 - **[OPT]** Filter dropdown. A results count, should be shown above the table.
   - The top level (tab) counts should not be effected by these filters.
 
-### Like/Unlike Toggle
+### Star/Unstar Toggle
 
-Impement a button for like/unlike toggle functionality.
+Impement a button for start/unstar toggle functionality.
 
-Clearly indicate the total repo likes count and the state (liked or not) for the user.
+Clearly indicate the total repo star count and the state (stared or not) for the user.
 
 ### **[OPT]** Language Chart
 
