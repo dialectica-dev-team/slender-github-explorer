@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Avatar, Portal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip } from '@material-ui/core';
+import { Avatar, Portal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useIssuesActions } from '../actions';
@@ -11,13 +11,19 @@ import PageControls from './PageControls';
 import { RepositoryExplorerContext } from './RepositoryExplorer';
 import SortableTableCell from './SortableTableCell';
 
+const useStyles = makeStyles(() => ({
+  tableContainer: {
+    minHeight: '100vh'
+  }
+}));
+
 type Props = {
   name: string;
   owner: string;
 };
 
 const IssuesPanel: React.FC<Props> = () => {
-  // const classes = useStyles();
+  const classes = useStyles();
   const { name = '', owner = '', toolbarControls } = React.useContext(
     RepositoryExplorerContext
   );
@@ -76,7 +82,7 @@ const IssuesPanel: React.FC<Props> = () => {
         </FilteringDropDownMenu>
         { paginate }
       </Portal>
-      <TableContainer>
+      <TableContainer className={ classes.tableContainer }>
         <Table stickyHeader>
           <caption>
             { paginate }
@@ -139,7 +145,7 @@ const IssuesPanel: React.FC<Props> = () => {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </div >
   );
 };
 

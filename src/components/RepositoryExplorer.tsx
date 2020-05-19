@@ -17,7 +17,8 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    padding: theme.spacing(1, 1)
+    padding: theme.spacing(1, 1),
+    zIndex: theme.zIndex.appBar - 1
   },
   toolbarControls: {
     justifyContent: 'space-evenly',
