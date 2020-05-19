@@ -7,9 +7,15 @@ const useMainStyles = makeStyles(theme => ({
   main: {
     backgroundColor: theme.palette.background.default
   },
+  headerToolbar: {
+    display: 'inline-flex',
+    justifyContent: 'space-between',
+    alignItem: 'center'
+  },
   mainAppBar: {
     zIndex: theme.zIndex.appBar + 1,
-    '&> .MuiToolbar': {
+    '&> .MuiToolbar-root': {
+      justifyContent: 'space-between',
       marginBottom: theme.spacing(1)
     }
   }

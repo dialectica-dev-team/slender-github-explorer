@@ -5,6 +5,7 @@ import useLayoutPortals from '../hooks/useLayoutPortals';
 import { useSelector } from 'react-redux';
 import { CombinedState } from '../typings';
 import useStyles from './styles';
+import UserInfoBar from '../components/UserInfoBar';
 
 interface Props {
 }
@@ -17,10 +18,12 @@ const Header = (props: Props) => {
   return (
     <React.Fragment>
       <AppBar position="sticky" color="primary" variant="elevation">
-        <Toolbar>
+        <Toolbar className={ classes.headerToolbar } color="default">
           <Typography variant="h6">
             { "Slender Github Explorer" }
           </Typography>
+
+          <UserInfoBar />
         </Toolbar>
       </AppBar>
       <AppBar position="sticky" color="default" variant="outlined" className={ classes.mainAppBar }>

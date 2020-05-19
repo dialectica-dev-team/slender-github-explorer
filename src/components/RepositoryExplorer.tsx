@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useLazyQuery } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import { AppBar, Box, makeStyles, Tab, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import { useSelector } from 'react-redux'
@@ -47,7 +47,6 @@ const RepositoryExplorer: React.FC<{}> = () => {
   const [ stats, setStats ] = React.useState<{ issues: number, forks: number, pullRequests: number } | undefined>();
 
   const selectedTab = React.useMemo(() => location.pathname, [ location ]);
-  const hasStats = React.useMemo<boolean>(() => stats !== undefined, [ stats ]);
   const { owner, name } = React.useMemo<{ owner?: string, name?: string }>(() => {
     if (!repoPath)
       return {};
@@ -57,43 +56,32 @@ const RepositoryExplorer: React.FC<{}> = () => {
       name: matches?.[ 1 ]
     }
   }, [ repoPath ]);
-  const shouldShow = React.useMemo<boolean>(() => hasStats && name && owner && accessToken ? true : false, [ hasStats, name, owner, accessToken ]);
-
+  const shouldShow = React.useMemo<boolean>(() => !repoPath || !accessToken ? false : true, [ repoPath, accessToken ]);
   const contextValues = React.useMemo(() => ({
     ...defaultContextValues,
     owner,
     name
   }), [ owner, name ]);
 
-  const [ fetchRepoStats, { data, loading, called } ] = useLazyQuery(FETCH_REPO_STATS, {
-    variables: {
-      owner,
-      name
-    }
-  });
+  const variables = { owner, name };
+  const { data, loading, refetch } = useQuery(FETCH_REPO_STATS, { variables });
   useProgressIndicator(loading);
 
   React.useEffect(() => {
-    if (!owner || !name) {
-      setStats(undefined);
-      return;
+    if (!repoPath || !accessToken) {
+      refetch(variables);
     }
-    fetchRepoStats({
-      variables: {
-        owner,
-        name
-      }
-    })
-  }, [ owner, name, called ]);
+  }, [ repoPath, accessToken ])
 
   React.useEffect(() => {
-    if (!data)
+    if (!data) {
+      setStats(undefined)
       return;
-
+    }
     setStats({
-      issues: data.repository.issues.totalCount,
-      forks: data.repository.forks.totalCount,
-      pullRequests: data.repository.pullRequests.totalCount
+      issues: data?.repository.issues.totalCount || 0,
+      forks: data?.repository.forks.totalCount || 0,
+      pullRequests: data?.repository.pullRequests.totalCount || 0
     });
   }, [ data ]);
 

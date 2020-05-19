@@ -1,5 +1,16 @@
 import { gql } from '@apollo/client';
 
+export const FETCH_VIEWER_DATA = gql`
+  query Viewer {
+    viewer {
+      id
+      avatarUrl
+      login
+      name
+    }
+  }
+`;
+
 export const FIND_REPOS = gql`
   query SearchRepository($query: String!, $limit: Int = 5) {
     search(type: REPOSITORY, first: $limit, query: $query) {
