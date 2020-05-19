@@ -1,4 +1,4 @@
-import { makeStyles, Paper, Popper, Grid, Button, ClickAwayListener } from '@material-ui/core';
+import { makeStyles, Paper, Popper, Grid, Button, ClickAwayListener, createStyles } from '@material-ui/core';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import React from 'react';
@@ -8,22 +8,27 @@ import { CombinedState } from '../typings';
 import DropDownPopperContent from './DropDownPopperContent';
 import { isArray } from 'util';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => createStyles({
   popper: {
     zIndex: theme.zIndex.appBar + 1
   },
   paper: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(3)
   },
   container: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    maxWidth: 290,
-    width: 220,
+    minWidth: 200,
     backgroundColor: theme.palette.grey[ 200 ],
     marginBottom: theme.spacing(1)
-  }
+  },
+  hitArea: {
+    flexGrow: 1,
+    whiteSpace: 'nowrap',
+    display: 'inline-flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'nowrap'
+  },
+  label: {}
 }));
 
 type Props<T extends string> = {
@@ -44,13 +49,13 @@ const FilteringDropDownMenu = <T extends string>({ children, selected, onApplyFi
 
   return (
     <React.Fragment>
-      <Grid container className={ classes.container } { ...props } spacing={ 1 }>
-        <Grid item xs={ 1 }>
+      <Grid container className={ classes.container } { ...props } spacing={ 2 } justify="space-between" alignItems="center" >
+        <Grid item>
           <FilterListIcon fontSize="small" />
         </Grid>
-        <Grid item xs={ 11 }>
+        <Grid item className={ classes.hitArea }>
           { children }
-          <Button size="small" onClick={ handleClick }>
+          <Button size="small" onClick={ handleClick } disableRipple>
             { isArray(selected) ? selected.join(', ') : selected }
             <ArrowDropDownIcon fontSize="small" />
           </Button>
