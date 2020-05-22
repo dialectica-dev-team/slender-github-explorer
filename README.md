@@ -1,6 +1,6 @@
 # Dialectica Front-end Assignment
 
-Front-end assigment for the position of Lead Front-End Engineer at
+Front-end assignment for the position of Lead Front-End Engineer at
 [Dialectica](https://dialecticanet.com/).
 
 ## Overview
@@ -19,7 +19,7 @@ You will have **1 week** to complete the assignment.
 To build a modern web app that functions as a minimal github repo explorer.
 
 The repo identifier will be input by the user, e.g. "facebook/react" and,
-_for the purpose of the assignmnet_,
+_for the purpose of the assignment_,
 you will have to present categories of data such as
 Issues, Pull Requests, Forks, Languages, Likes
 through a UI inspired by Dialectica's product designs.
@@ -92,7 +92,7 @@ A table with following properties:
 #### Forks
 
 - Router: `/forks`
-- Columns: [repoAndOnwerName, description, starCount, createdAt]
+- Columns: [repoAndOwnerName, description, starCount, createdAt]
 - **[OPT]** Filter by Privacy: [Public, Private, All], defaults is Public
 - **[OPT]** Sort by: [starCount, createdAt], default starCount desc
 
@@ -103,13 +103,13 @@ Tables should implement
 - Pagination
   - Up to 20 results in the first request
   - **[OPT]** Load more button to bring next 20
-- **[OPT]** Togglable sorting asc/desc
+- **[OPT]** Button to toggle sorting between asc/desc
 - **[OPT]** Filter dropdown. A results count, should be shown above the table.
   - The top level (tab) counts should not be effected by these filters.
 
-### Star/Unstar Toggle
+### Star/Un-star Toggle
 
-Impement a button for start/unstar toggle functionality.
+Implement a button for start/un-star toggle functionality.
 
 Clearly indicate the total repo star count and the state (stared or not) for the user.
 
@@ -124,6 +124,23 @@ Any additional languages should be bundled under label "other".
 
 You may use some charting lib like [chartjs](https://www.chartjs.org/samples/latest/charts/pie.html).
 
+## Assignment Submission
+
+Candidates should NOT fork the assignment as this will be visible/trackable by other candidates.
+Clone it locally and then push it to your own account on any git host (github, bitbucket, etc.).
+
+Send email to dspanos@dialecticanet.com with a link to your repo.
+If your repo is not public, send a collaboration invite to same email.
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 ---
 
 ## All Below is NOT part of the assignment
