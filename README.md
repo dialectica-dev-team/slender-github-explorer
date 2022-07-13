@@ -126,10 +126,7 @@ You may use some charting lib like [chartjs](https://www.chartjs.org/samples/lat
 
 ## Assignment Submission
 
-Candidates should NOT fork the assignment as this will be visible/trackable by other candidates.
-Clone it locally and then push it to your own account on any git host (github, bitbucket, etc.).
-
-Send email to gtavantzopoulos@dialecticanet.com and CC to estamatouli@dialecticanet.com when finished.
+Just send an email to gtavantzopoulos@dialecticanet.com and CC to estamatouli@dialecticanet.com when finished.
 
 <br />
 <br />
